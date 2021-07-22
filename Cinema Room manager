@@ -1,0 +1,21 @@
+import java.util.Scanner
+      fun main() {
+        val priceNotMore60Number = 10
+        val priceFrontHalf = 10
+        val priceBackHalf = 8
+        val scan = Scanner(System.`in`)
+        System.out.println("Enter the number of rows:")
+        val numberOfRows = scan.nextInt()
+        System.out.println("Enter the number of seats in each row:")
+        val numberOfSeats = scan.nextInt()
+        val totalNumberOfSeats = numberOfRows * numberOfSeats
+        if (totalNumberOfSeats <= 60) {
+            System.out.println("Total income:")
+            println("$" + (totalNumberOfSeats * priceNotMore60Number))
+        } else {
+            val frontHalfOfRows = numberOfRows / 2
+            val backHalfOfRows = numberOfRows - frontHalfOfRows
+            println("$" + (frontHalfOfRows * numberOfSeats * priceFrontHalf
+                    + backHalfOfRows * numberOfSeats * priceBackHalf))
+        }
+    }
